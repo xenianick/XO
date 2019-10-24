@@ -23,8 +23,14 @@ boardEl.addEventListener('click', function (event) {
 
 function showWinner(winner) {
   let header = modalEl.getElementsByTagName('h2')[0];
+  if (winner == activePlayer) {
   header.textContent = `🍾 Победил игрок №${winner + 1}! 🍾`;
   modalEl.classList.remove('hidden');
+  } else {
+    let header = modalEl.getElementsByTagName('h2')[0];
+    header.textContent = `Ничья 🍾`;
+    modalEl.classList.remove('hidden');
+  }
 }
 
 function renderBoard(board) {

@@ -20,6 +20,7 @@ function click(row, col) {
   renderBoard(board);
 
   function check() {
+    let count = 0;
     for (j = 0; j < cells; j++) {
       let countH = 0;
       let countV = 0;
@@ -39,9 +40,14 @@ function click(row, col) {
         if (board[i][index] == players[activePlayer]) {
         countDR += 1;
         };
+        if (board[j][i] == players[0] || board[j][i] == players[1]) {
+        count += 1;
+        };
       };
       if (countH == cells || countV == cells || countDL == cells || countDR == cells) {
         showWinner(activePlayer);
+      } else if (count == cells * cells) {
+        showWinner();
       };
     };
   };

@@ -34,14 +34,14 @@ function click(row, col) {
           countV += 1;
         };
         if (board[i][i] == players[activePlayer]) {
-        countDL += 1;
+          countDL += 1;
         };
         let index = board[i].length - 1 - i;  
         if (board[i][index] == players[activePlayer]) {
-        countDR += 1;
+          countDR += 1;
         };
         if (board[j][i] == players[0] || board[j][i] == players[1]) {
-        count += 1;
+          count += 1;
         };
       };
       if (countH == cells || countV == cells || countDL == cells || countDR == cells) {
